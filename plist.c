@@ -51,7 +51,7 @@ void plist_dealloc_cont_pages(PList* alloc, void* page, size_t count) {
     PListNode* node = (PListNode*)page;
     list_init(&node->list);
     node->pages = count-1;
-    list_append(&node->list, alloc->list.prev);
+    list_append(&node->list, alloc->list);
 }
 
 void plist_defrag(PList* alloc) {
